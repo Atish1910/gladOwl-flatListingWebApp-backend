@@ -7,6 +7,6 @@ hostRouter.post("/add-user", hostController.postAddUser);
 hostRouter.get("/user-list", hostController.getAddUser);
 hostRouter.get("/user-list-json", hostController.getAddUserJson);
 hostRouter.post("/login-user", hostController.postLogin);
-hostRouter.get("/login", hostController.getLogin);
+hostRouter.get("/host/login", hostController.getLogin);
 
 module.exports = hostRouter;

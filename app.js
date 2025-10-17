@@ -13,6 +13,10 @@ app.use(express.urlencoded());
 app.use(storeRouter);
 app.use(hostRouter);
 
+app.use((req, res) => {
+  res.status(404).render("404");
+});
+
 const PORT = 4201;
 
 const DB_PATH =

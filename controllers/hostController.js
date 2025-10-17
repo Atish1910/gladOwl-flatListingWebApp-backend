@@ -1,6 +1,7 @@
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 
+// GET List of users
 exports.getAddUser = async (req, res, next) => {
   try {
     await User.find().then((registereUsers) => {
@@ -22,6 +23,7 @@ exports.getAddUserJson = async (req, res, next) => {
   });
 };
 
+// POST Signup
 exports.postAddUser = async (req, res, next) => {
   try {
     const { fullName, phoneNo, password, role } = req.body;
@@ -57,12 +59,14 @@ exports.postAddUser = async (req, res, next) => {
   }
 };
 
+// GET Login
 exports.getLogin = (req, res, next) => {
   User.find().then(() => {
-    res.render("login");
+    res.render("host/login");
   });
 };
 
+// POST Login
 exports.postLogin = async (req, res, next) => {
   try {
     const { phoneNo, password } = req.body;

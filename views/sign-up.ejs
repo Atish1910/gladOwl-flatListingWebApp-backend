@@ -11,17 +11,27 @@
     />
   </head>
   <body>
+    <%- include('partials/navbar') %>
     <section>
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6 border py-5 text-center">
-            <h4 class="text-center py-3 border">Login here</h4>
+            <h4 class="text-center py-3 border">Create Users From Here</h4>
             <form
-              action="/login-user"
+              action="/add-user"
               method="POST"
               class="max-w-md mx-auto p-4 border rounded shadow-sm bg-light"
             >
-              <h4 class="mb-4 text-center">Login</h4>
+              <h4 class="mb-4 text-center">Add New User</h4>
+
+              <!-- First Name -->
+              <input
+                type="text"
+                name="fullName"
+                placeholder="Enter First Name"
+                class="form-control mb-3"
+                required
+              />
 
               <!-- Phone -->
               <input
@@ -40,6 +50,15 @@
                 class="form-control mb-3"
                 required
               />
+
+              <!-- Role -->
+              <select name="role" class="form-select mb-3" required>
+                <option value="" disabled selected>-- Select Role --</option>
+                <option value="Watchmen">Watchmen</option>
+                <option value="Chairmen">Chairmen</option>
+                <option value="Agent">Agent</option>
+              </select>
+
               <!-- Submit -->
               <button type="submit" class="btn btn-primary w-100">
                 Submit
