@@ -8,17 +8,20 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", "views");
 
-app.use(express.urlencoded());
+// ✅ Fix: allow parsing form data properly
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
+// ✅ Mount hostRouter BEFORE storeRouter to avoid conflicts
+app.use("/host", hostRouter);
 app.use(storeRouter);
-app.use(hostRouter);
 
+// ✅ 404 fallback
 app.use((req, res) => {
   res.status(404).render("404");
 });
 
-const PORT = 4201;
-
+const PORT = 4210;
 const DB_PATH =
   "mongodb+srv://atishkamble398_db_user:D4VsMY5G8fvRxGKn@clustergoflatlisting.bqnrsws.mongodb.net/?retryWrites=true&w=majority&appName=ClusterGoFlatListing";
 

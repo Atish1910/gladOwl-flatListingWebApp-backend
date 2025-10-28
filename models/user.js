@@ -21,6 +21,34 @@ const userSchema = new mongoose.Schema(
       enum: ["Watchmen", "Chairmen", "Agent"],
       default: "Agent",
     },
+    email: {
+      type: String,
+      trim: true,
+    },
+    image: {
+      type: String,
+      trim: true,
+    },
+    societyName: {
+      type: String,
+      trim: true,
+    },
+    area: {
+      type: String,
+      trim: true,
+    },
+    state: {
+      type: String,
+      trim: true,
+    },
+    city: {
+      type: String,
+      trim: true,
+    },
+    postalCode: {
+      type: String,
+      trim: true,
+    },
   },
   { timestamps: true } // auto adds createdAt & updatedAt
 );

@@ -11,7 +11,7 @@
     />
   </head>
   <body>
-    <%- include('partials/navbar') %>
+    <%- include('../partials/navbar') %>
     <section class="py-4">
       <div class="container">
         <div class="row mb-3">
@@ -34,7 +34,6 @@
                 <th>Postal Code</th>
                 <th>Date</th>
                 <th>Edit</th>
-                <th>Delete</th>
               </tr>
             </thead>
             <tbody class="text-center">
@@ -77,13 +76,6 @@
                     href="/host/edit-signup/<%= user._id %>"
                     class="btn btn-sm btn-warning"
                     >Edit</a
-                  >
-                </td>
-                <td>
-                  <a
-                    href="/host/deleteUser/<%= user._id %>"
-                    class="btn btn-sm btn-danger"
-                    >Delete</a
                   >
                 </td>
               </tr>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit User</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+    <section class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 border rounded shadow-sm bg-light p-5">
+            <h3 class="text-center mb-4">Edit User Details</h3>
+            <form action="/host/edit-signup/<%= user._id %>" method="POST" class="row g-3">
+              
+              <div class="col-md-6">
+                <label class="form-label">Full Name</label>
+                <input type="text" name="fullName" value="<%= user.fullName %>" class="form-control" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Phone No</label>
+                <input type="text" name="phoneNo" value="<%= user.phoneNo %>" class="form-control" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" value="<%= user.email %>" class="form-control" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Image URL</label>
+                <input type="text" name="image" value="<%= user.image %>" class="form-control" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Society Name</label>
+                <input type="text" name="societyName" value="<%= user.societyName %>" class="form-control" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Area</label>
+                <input type="text" name="area" value="<%= user.area %>" class="form-control" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">City</label>
+                <input type="text" name="city" value="<%= user.city %>" class="form-control" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">State</label>
+                <input type="text" name="state" value="<%= user.state %>" class="form-control" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Postal Code</label>
+                <input type="text" name="postalCode" value="<%= user.postalCode %>" class="form-control" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Role</label>
+                <select name="role" class="form-select">
+                  <option value="Watchmen" <%= user.role === 'Watchmen' ? 'selected' : '' %>>Watchmen</option>
+                  <option value="Chairmen" <%= user.role === 'Chairmen' ? 'selected' : '' %>>Chairmen</option>
+                  <option value="Agent" <%= user.role === 'Agent' ? 'selected' : '' %>>Agent</option>
+                </select>
+              </div>
+
+              <div class="col-12 text-center mt-4">
+                <button type="submit" class="btn btn-success px-5">Update</button>
+                <a href="/host/user-list" class="btn btn-secondary ms-3">Cancel</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
